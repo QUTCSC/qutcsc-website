@@ -7,8 +7,13 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [icon(), tailwind()],
-  devToolbar: {
-    enabled: false
-  }
-});
+  	integrations: [
+		icon({
+			iconDir: "src/icons",
+		}), 
+  		tailwind()
+	],
+  	devToolbar: {
+    	enabled: false
+  	}
+})
