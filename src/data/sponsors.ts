@@ -23,14 +23,14 @@ const sponsors = [
         logo: "/src/assets/sponsors/tanto.png",
         tier: "Bronze"
     },
-    // {
-    //     name: "Technology One",
-    //     industry: "Enterprise Software",
-    //     about: "Technology One is a leading provider of enterprise software solutions, helping organisations streamline their operations and improve productivity. They offer software in areas such as financials, HR, and supply chain, helping businesses automate processes and make data-driven decisions. Technology One focuses on delivering innovative solutions that drive digital transformation.",
-    //     website: "https://www.technology1.com/",
-    //     logo: "/src/assets/sponsors/technology_one.png",
-    //     tier: "Bronze"
-    // }
+    {
+        name: "Technology One",
+        industry: "Enterprise Software",
+        about: "Technology One is a leading provider of enterprise software solutions, helping organisations streamline their operations and improve productivity. They offer software in areas such as financials, HR, and supply chain, helping businesses automate processes and make data-driven decisions. Technology One focuses on delivering innovative solutions that drive digital transformation.",
+        website: "https://www.technology1.com/",
+        logo: "/src/assets/sponsors/technology_one.png",
+        tier: "Bronze"
+    }
 ]
 
 export default { sponsors }
