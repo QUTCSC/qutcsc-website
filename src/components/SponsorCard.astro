@@ -15,17 +15,23 @@ interface Props {
 
 // Destructuring interface props
 const { imagePath, name, industry, about, website, tier } = Astro.props
+const isPlatinum = tier.toLowerCase() === "platinum"
 
 // Importing images from headshots asset folder
 const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/sponsors/*.{jpeg,jpg,png}")
-if ( !images[imagePath] ) throw new Error(` "${imagePath}" does not exist in glob: "/src/assets/headshots/*.{jpeg,jpg,png}" `)
+if ( !images[imagePath] ) throw new Error(` "${imagePath}" does not exist in glob: "/src/assets/sponsors/*.{jpeg,jpg,png}" `)
 ---
 
 <!-- Sponsor Card -->
-<div class="flex flex-col gap-y-2 items-center">
-    <Image src={ images[imagePath]() } alt={ name } class="p-4 object-contain border rounded-lg" />
-    <span class="font-semibold uppercase text-xl"><span class="text-primary">{ tier }</span> | { name }</span>
-    <span class="text-md pb-2 text-center">{ about }</span>
+<div class={`flex flex-col gap-y-3 items-center text-center border border-zinc-700 rounded-xl p-6 bg-zinc-900/40 ${isPlatinum ? "w-full max-w-4xl" : "w-full max-w-2xl"}`}>
+    <Image
+        src={ images[imagePath]() }
+        alt={ name }
+        class={`object-contain rounded-lg border border-zinc-700 bg-black/30 ${isPlatinum ? "p-8 min-h-[14rem]" : "p-4 min-h-[9rem]"}`}
+    />
+    <span class={`font-semibold uppercase ${isPlatinum ? "text-3xl" : "text-2xl"}`}><span class="text-primary">{ tier }</span> | { name }</span>
+    <span class="text-sm uppercase tracking-wider text-zinc-400">{ industry }</span>
+    <span class={`pb-2 text-zinc-200 ${isPlatinum ? "text-lg" : "text-base"}`}>{ about }</span>
     <Button 
         text="Learn More" 
         type="link" 

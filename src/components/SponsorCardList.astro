@@ -2,13 +2,47 @@
 import data from "../data/sponsors"
 const { sponsors } = data
 import SponsorCard from "./SponsorCard.astro"
+
+const sponsorSections = [
+    {
+        tier: "Platinum",
+        heading: "Platinum Sponsor",
+        summary: "Our top-tier partner helping power the biggest opportunities for our members.",
+        gridClasses: "grid grid-cols-1 gap-8"
+    },
+    {
+        tier: "Bronze",
+        heading: "Bronze Sponsors",
+        summary: "Industry partners supporting our events, programs, and student community.",
+        gridClasses: "grid grid-cols-1 md:grid-cols-2 gap-8"
+    }
+]
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 place-items-center">
+<div class="flex flex-col gap-14 p-8">
     {
-        sponsors.map(sponsor => {
-            return(
-                <SponsorCard imagePath={sponsor.logo} name={sponsor.name} industry={sponsor.industry} website={sponsor.website} about={sponsor.about} tier={sponsor.tier} />
+        sponsorSections.map(section => {
+            const sponsorsInSection = sponsors.filter(sponsor => sponsor.tier === section.tier)
+
+            if (sponsorsInSection.length === 0) return null
+
+            return (
+                <section class="flex flex-col gap-5">
+                    <div class="text-center flex flex-col gap-2">
+                        <h3 class="text-2xl md:text-3xl font-bold uppercase">{section.heading}</h3>
+                        <p class="text-md md:text-lg text-zinc-300">{section.summary}</p>
+                    </div>
+
+                    <div class={`${section.gridClasses} place-items-center`}>
+                        {
+                            sponsorsInSection.map(sponsor => {
+                                return (
+                                    <SponsorCard imagePath={sponsor.logo} name={sponsor.name} industry={sponsor.industry} website={sponsor.website} about={sponsor.about} tier={sponsor.tier} />
+                                )
+                            })
+                        }
+                    </div>
+                </section>
             )
         })
     }
