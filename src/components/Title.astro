@@ -10,7 +10,7 @@ interface Props {
 const { text, subtext, icon } = Astro.props
 ---
 
-<h1 class="text-4xl md:text-6xl w-full font-medium mb-4 leading-tight gap-x-8 flex items-center">
+<h1 class="text-4xl md:text-6xl w-full font-medium mb-4 leading-tight gap-x-8 flex items-center font-display">
 	{ icon ? <span class="text-primary"><Icon name={ icon } /></span> : "" }
 	<span class="break-words">{text}</span>
 	{ subtext ? <span class="text-primary">{ subtext }</span> : "" }

@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+    --font-body: "Manrope", "Segoe UI", "Helvetica Neue", sans-serif;
+    --font-display: "Space Grotesk", "Trebuchet MS", sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    letter-spacing: 0.005em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+}

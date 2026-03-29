@@ -14,7 +14,7 @@ import text from "../assets/logos/logo_text.svg"
         <div class="flex items-center justify-between md:w-auto w-full">
             <span class="py-5 px-2 flex items-center justify-center">
                 <Image src={ logo } alt="QUTCSC Logo" class="w-16" />
-                <a href="/" class="font-bold uppercase leading-loose text-2xl px-4 inline-flex items-center"> <Image src={ text } alt="QUTCSC Logo" class="w-56" /> </a>
+                <a href="/" class="font-display font-bold uppercase leading-loose text-2xl px-4 inline-flex items-center"> <Image src={ text } alt="QUTCSC Logo" class="w-56" /> </a>
             </span>
     
             <!-- mobile menu icon -->
@@ -31,7 +31,7 @@ import text from "../assets/logos/logo_text.svg"
                 nav.map(page => {
                     if (page.type === "link") {
                         return (
-                            <a data-navlink href={page.path} class="py-2 px-4 hover:underline flex items-center gap-x-4 text-lg">
+                            <a data-navlink href={page.path} class="font-display tracking-wide py-2 px-4 hover:underline flex items-center gap-x-4 text-lg">
                                 <span class="text-primary"><Icon name={page.icon} /></span>{page.title}
                             </a>
                         )

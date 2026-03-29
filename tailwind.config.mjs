@@ -3,6 +3,10 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			fontFamily: {
+				body: ["Manrope", "Segoe UI", "Helvetica Neue", "sans-serif"],
+				display: ["Space Grotesk", "Trebuchet MS", "sans-serif"],
+			},
 			aria: {
 				current: "current=page",
 			},

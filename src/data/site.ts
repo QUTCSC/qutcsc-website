@@ -1,7 +1,7 @@
 const socialLinks = [
     {
         title: "Discord",
-        path: "https://discord.gg/Mwhrm2z2DN",
+        path: "https://discord.gg/454Db9UXRC",
         icon: "tabler:brand-discord"
     },
     {

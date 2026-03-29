@@ -15,7 +15,7 @@ const { title, icon, links } = Astro.props
 ---
 
 <div class="relative">
-    <button type="button" class="dropdown-toggle py-2 px-4 hover:underline inline-flex items-center gap-2 w-full group text-lg">
+    <button type="button" class="dropdown-toggle font-display tracking-wide py-2 px-4 hover:underline inline-flex items-center gap-2 w-full group text-lg">
         <span class="pointer-events-none select-none flex items-center gap-x-2"><span class="text-primary"><Icon name={ icon } /></span>{ title }</span>
         <span class="group-focus:rotate-180 transition duration-300"><Icon name="tabler:chevron-down" /></span>
     </button>
@@ -23,7 +23,7 @@ const { title, icon, links } = Astro.props
         {
             (links || []).map(link => {
                 return(
-                    <a data-navlink href={ link.path } class="px-4 py-2 hover:bg-base-300 flex gap-x-4 items-center">
+                    <a data-navlink href={ link.path } class="font-display tracking-wide px-4 py-2 hover:bg-base-300 flex gap-x-4 items-center">
                         <span class="text-primary"><Icon name={ link.icon } /></span>{ link.title }
                     </a>
                 )
